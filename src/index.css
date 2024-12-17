@@ -1,4 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;700&display=swap');
 
+*{
+    font-family: 'Josefin Slab', sans-serif;
+    font-weight: bold;
+}

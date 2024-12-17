@@ -31,7 +31,7 @@ export default function ProductPage({search}) {
     });
 
   return (
-    <div className='pl-7  bg-[#E8EBE4] pt-[40px]  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+    <div className=' sm:mx-[0px] mx-5 bg-white pt-[40px]  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
       {loading? (<p>loading...</p>)
       :
       (filtered.map((product,index)=>(
