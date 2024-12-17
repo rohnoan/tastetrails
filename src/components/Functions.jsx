@@ -1,5 +1,15 @@
 import React from 'react'
 
+
+//https://world.openfoodfacts.org/cgi/search.pl?search_terms=coke&search_simple=1&jqm=1
+
+//https://world.openfoodfacts.net/api/v2/product/3017624010701?fields=product_name,nutriscore_data,nutriments,nutrition_grades
+
+
+const handleSubmit=()=>{
+  
+}
+
 export default function Functions() {
   return (
     <div className='text-white flex justify-between h-[80px] bg-[#294C60] items-center'>
@@ -13,6 +23,7 @@ export default function Functions() {
       </div>
       <div className=' flex-[2]'>
         <input 
+          onChange={(e=>handleSubmit(e.target.value))}
           type="text" 
           placeholder="Search..." 
           className="w-full px-4 py-2 rounded bg-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-[#001B2E]"
