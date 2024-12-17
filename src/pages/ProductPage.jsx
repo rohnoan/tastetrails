@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import Product from '../components/Product';
-export default function ProductPage() {
+export default function ProductPage({search}) {
 
     const[products,setProducts]=useState([]);
     const[loading,setLoading]=useState(true);
@@ -26,12 +26,16 @@ export default function ProductPage() {
         fetchProducts();
     },[])
 
+    const filtered=products.filter((product)=>{
+        return product.product_name.toLowerCase().includes(search.toLowerCase());
+    });
+
   return (
     <div className='pl-7  bg-[#E8EBE4] pt-[40px]  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
       {loading? (<p>loading...</p>)
       :
-      (products.map((product,index)=>(
-        <div>
+      (filtered.map((product,index)=>(
+        <div key={product.id}>
             <Product
             index={index}
             name={product.product_name}
