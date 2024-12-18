@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
-  const [active, setActive] = useState('HOME');
+  const [active, setActive] = useState('');
+  const location = useLocation();
 
-  const handleClick = (item) => {
-    setActive(item);
-  };
+  useEffect(() => {
+    const path = location.pathname.split('/')[1].toUpperCase(); 
+    if (['HOME', 'PRODUCTS', 'CART'].includes(path)) {
+      setActive(path);
+    }
+  }, [location]);
 
   return (
     <div className="bg-blue-500 flex justify-center">
@@ -20,7 +22,7 @@ export default function Navbar() {
                 className={`border-2 border-black bg-white rounded-lg w-[100px] sm:w-[150px] text-black ${
                   active === item ? 'bg-slate-500 text-white' : ''
                 }`}
-                onClick={() => handleClick(item)}
+                onClick={() => setActive(item)}
               >
                 {item}
               </button>
