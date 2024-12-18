@@ -18,7 +18,7 @@ export default function Navbar() {
             <Link to={`/${item.toLowerCase()}`}>
               <button
                 className={`border-2 border-black bg-white rounded-lg w-[100px] sm:w-[150px] text-black ${
-                  active === item ? 'bg-slate-800 text-white' : ''
+                  active === item ? 'bg-slate-500 text-white' : ''
                 }`}
                 onClick={() => handleClick(item)}
               >

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Product({ index, name, category, ingredients, grade, image, price }) {
+export default function Product({ index, name, category, ingredients, grade, image }) {
   return (
     <div className="flex border-2 border-[#001B2E] mt-[40px] bg-white flex-col rounded-lg w-full 
     sm:w-[250px] 
@@ -16,7 +16,7 @@ export default function Product({ index, name, category, ingredients, grade, ima
       </div>
       <div className="flex-1 flex flex-col p-2">
         <div className="text-lg">
-          {name} {price}
+          {name} 
         </div>
         <div className="text-[1px]">
           <div>{category}</div>
