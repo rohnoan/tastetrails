@@ -33,17 +33,7 @@ export default function ProductPage() {
       });
   }, []);
   
-  useEffect(()=>{
-    const handleSideClick=(e)=>{
-      if(!filterRef.current && !filterRef.current.contains(e.target)){
-        setIsFilterOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleSideClick);
-    return () => {
-      document.removeEventListener('mousedown', handleSideClick);
-    };
-  }, []);
+
   
 
 useEffect(()=>{
