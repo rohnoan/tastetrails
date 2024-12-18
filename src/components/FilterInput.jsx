@@ -37,9 +37,9 @@ const FilterInput = React.memo(function FilterInput({
             />
             <button
               onClick={handleSearch}
-              className="ml-[8px] border-[2px] rounded-lg bg-white border-black"
+              className="ml-[8px] sm:w-[100px] border-[2px] rounded-lg bg-white border-black"
             >
-              search
+              SEARCH
             </button>
           </div>
         </div>
@@ -47,7 +47,7 @@ const FilterInput = React.memo(function FilterInput({
           <button
             className="w-[80px] bg-white sm:w-[150px] border-2 border-black p-2 rounded"
           >
-            SCAN QR
+            BARCODE
           </button>
         </div>
       </div>

@@ -7,13 +7,15 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Cart from './pages/Cart'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import CartContextProvider from './context/CartContextProvider'
 export default function App() {
 
   const[search,setSearch]=useState('');
 
 
   return (
-    <BrowserRouter>
+    <CartContextProvider>
+      <BrowserRouter>
     <Header/>
     <Navbar/>
     <Routes>
@@ -24,5 +26,6 @@ export default function App() {
     </Routes>
     <Footer/>
     </BrowserRouter>
+    </CartContextProvider>
   )
 }
