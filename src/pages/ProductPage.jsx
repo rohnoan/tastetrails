@@ -126,7 +126,23 @@ if(loading){
           </div>
         </div>
       </div>
-      <div className="md:pl-0 pl-5 bg-[#E8EBE4] pt-[40px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="justify-center text-center bg-[#E8EBE4]">
+      NOTE: grades are a scale to understand how good are these products for your health
+      <div className="grid-row-5">
+      <div className='bg-green-700 justify-center text-center'>
+        A - Nutritious
+      </div>
+      <div className='bg-green-300 justify-center text-center'>
+        B -Wholesome
+      </div>
+      <div className='bg-yellow-400 justify-center text-center'>
+        C - Moderate</div>
+      <div className='bg-orange-400 justify-center text-center'>D - Unhealthy</div>
+      <div className='bg-red-600 justify-center text-center'>E - Harmful</div>
+      </div>
+      
+      </div>
+      <div className="md:pl-0 xl:pl-5 pl-5 bg-[#E8EBE4] pt-[40px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {filteredProducts.map((product, index) => (
           <div key={product.id||product.code||`product-${index}`}>
             <Product
