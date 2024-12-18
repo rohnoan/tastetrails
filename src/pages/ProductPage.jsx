@@ -35,6 +35,7 @@ export default function ProductPage() {
         setProducts((prevProducts) => (page === 1 ? data.products : [...prevProducts, ...data.products]));
         setFilteredProducts((prevProducts) => (page === 1 ? data.products : [...prevProducts, ...data.products]));
         setLoading(false);
+        console.log(data)
       })
       .catch((error) => {
         console.error('Error fetching products:', error);
@@ -96,9 +97,10 @@ export default function ProductPage() {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
         {filteredProducts.map((product, index) => (
           <Product
-            key={product.id || product.code || `product-${index}`}
+            key={product._id || product.code || `product-${index}`}
             index={index}
             name={product.product_name || 'No Name'}
+            id={product._id || product.code} 
             image={product.image_url || '/assets/placeholder.jpg'}
             ingredients={product.ingredients_text || 'No Ingredients'}
             category={product.categories || 'No Category'}

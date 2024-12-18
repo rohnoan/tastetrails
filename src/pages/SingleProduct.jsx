@@ -10,40 +10,42 @@ export default function SingleProduct() {
     fetch(`https://world.openfoodfacts.org/api/v0/product/${id}.json`)
       .then((response) => response.json())
       .then((data) => {
-        setProduct(data.product);
+        console.log(data); 
+        if (data.product) {
+          setProduct(data.product);
+        } else {
+          setProduct(null);
+        }
         setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching product:', error);
+        setProduct(null);
         setLoading(false);
       });
   }, [id]);
 
   if (loading) {
-    return <div className='flex justify-center items-center'
-    >
+    return <div className='flex justify-center items-center'>
       <div className='text-3xl '>
         LOADING...
       </div>
     </div>;
-
   }
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>Product not found. Please check the product ID or try again later.</div>;
   }
 
   return (
     <div className="border-2 m-10 rounded-2xl p-10 border-black">
       <div className='flex items-center justify-center'>
-      <img className='flex justify-center items-center' src={product.image_url || '/assets/placeholder.jpg'} alt={product.product_name} />
+        <img className='flex justify-center items-center' src={product.image_url || '/assets/placeholder.jpg'} alt={product.product_name} />
       </div>
       <div className='bg-slate-400 border-2 p-4 border-black rounded-xl mt-8'>
-      <h1 c>Name : {product.product_name || 'No Name'}</h1>
-
-      <p><strong>Category : </strong> {product.categories || 'No Category'}</p>
-      <p><strong>Nutrition Grade : </strong> {product.nutrition_grades.toUpperCase() || 'N/A'}</p>
-      <p></p>
+        <h1>Name: {product.product_name || 'No Name'}</h1>
+        <p><strong>Category: </strong> {product.categories || 'No Category'}</p>
+        <p><strong>Nutrition Grade: </strong> {product.nutrition_grades.toUpperCase() || 'N/A'}</p>
       </div>
     </div>
   );

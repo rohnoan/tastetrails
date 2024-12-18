@@ -31,7 +31,7 @@ export default function Product({ index, id, name, category, grade, image }) {
     className="flex border-2 border-[#001B2E] mt-[40px] bg-white flex-col rounded-lg w-full sm:w-[250px] md:w-[260px] lg:w-[330px] h-[400px]" key={index}>
       <div className="flex-[2] flex justify-center items-center overflow-hidden">
         <div className="h-full">
-          <Link to={`/product/${id}`} className="w-full h-full">
+          <Link to={`/products/${id} `} className="w-full h-full">
           <img className="p-4 w-full h-full object-contain hover:scale-105 transition-transform duration-300" src={image} alt={name} />
           </Link>
         </div>
