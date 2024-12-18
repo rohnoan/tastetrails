@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <CartContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/tastetrails/">
     <Header/>
     <Navbar/>
     <Routes>

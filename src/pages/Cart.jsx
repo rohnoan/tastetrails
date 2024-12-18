@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CartContext from "../context/CartContext";
-
+import cartimg from '../images/cartimg.png'
 export default function Cart() {
   const { cart } = useContext(CartContext);
 
@@ -11,7 +11,9 @@ export default function Cart() {
   return (
     <div>
       {cart.length === 0 ? (
-        <p>Empty</p>
+        <div className="bg-[#f5f9fc] flex items-center p-20 justify-center">
+          <img src={cartimg} alt="" />
+        </div>
       ) : (
         <div>
           {cart.map((item) => (
