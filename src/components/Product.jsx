@@ -44,17 +44,17 @@ export default function Product({ index, id, name, category, grade, image }) {
 
          
           <div className="flex justify-center text-center">
-            <div className="flex items-center m-[10px] bg-gray-200 p-1 rounded-xl border-2">
+            <div className="flex items-center m-[10px] sm:m-[25px] bg-gray-200 p-1 rounded-xl border-2">
               <button
                 onClick={decrementQuantity}
-                className="bg-red-500 text-white w-[40px] rounded-l-xl"
+                className="bg-red-500 text-white w-[25px] md:w-[40px] rounded-l-xl"
               >
                 -
               </button>
-              <div className="w-[60px] text-center">{quantity}</div>
+              <div className="w-[30px] md:w-[60px] text-center">{quantity}</div>
               <button
                 onClick={incrementQuantity}
-                className="bg-green-500 text-white w-[40px] rounded-r-xl"
+                className="bg-green-500 text-white w-[25px] md:w-[40px] rounded-r-xl"
               >
                 +
               </button>
@@ -62,7 +62,7 @@ export default function Product({ index, id, name, category, grade, image }) {
 
             <button
               onClick={handleAddToCart}
-              className="m-[10px] bg-blue-500 w-[140px] border-black p-1 rounded-xl border-2"
+              className="m-[10px] bg-blue-500 w-[50px] sm:w-[140px] border-black p-1 rounded-xl border-2"
             >
               ADD TO CART
             </button>
