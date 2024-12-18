@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Product from '../components/Product';
 import FilterInput from '../components/FilterInput';
-
+import { Link } from 'react-router-dom';
 export default function ProductPage() {
   const [input, setInput] = useState('');
   const [search, setSearch] = useState('');
@@ -95,8 +95,8 @@ export default function ProductPage() {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
         {filteredProducts.map((product, index) => (
+          <Link to={`/product/${product.id}`} key={product.id || product.code || `product-${index}`}>
           <Product
-            key={product.id || product.code || `product-${index}`}
             index={index}
             name={product.product_name || 'No Name'}
             image={product.image_url || '/assets/placeholder.jpg'}
@@ -104,6 +104,7 @@ export default function ProductPage() {
             category={product.categories || 'No Category'}
             grade={product.nutrition_grades || 'N/A'}
           />
+        </Link>
         ))}
       </div>
     </div>
