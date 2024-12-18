@@ -22,7 +22,7 @@ export default function Cart() {
                 className="w-20 h-20 object-contain mr-4"
               />
               <div className="flex flex-col justify-center">
-                <h3 className="font-bold">{item.product_name}</h3> 
+                <h3 className="font-bold">Name: {item.product_name}</h3> 
                 <p>Category: {item.category}</p>
                 <p>Grade: {item.grade}</p>
                 <p>Quantity: {item.quantity}</p>
