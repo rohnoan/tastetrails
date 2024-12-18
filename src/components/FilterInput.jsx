@@ -102,7 +102,7 @@ const FilterInput = React.memo(function FilterInput({
                 Spreads
               </button>
               <button
-                onClick={() => setCategory('chocolates')}
+                onClick={() =>setCategory('chocolates')}
                 className={`w-full p-2 border-black border-[3px] rounded ${category === 'chocolates' ? 'bg-gray-300' : 'bg-white'}`}
               >
                 Chocolates
