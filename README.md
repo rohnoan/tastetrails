@@ -1,3 +1,4 @@
+NOTE  :   changed the view to code for readme.md
 hi im rohan sharma :)
     i am a react frontend developer
     i like to do competitive programming
